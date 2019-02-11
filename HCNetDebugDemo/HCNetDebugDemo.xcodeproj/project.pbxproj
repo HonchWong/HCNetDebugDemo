@@ -15,6 +15,17 @@
 		00A4EE2822112B13006F1562 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A4EE2722112B13006F1562 /* main.m */; };
 		00A4EE3222112B13006F1562 /* HCNetDebugDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A4EE3122112B13006F1562 /* HCNetDebugDemoTests.m */; };
 		00A4EE3D22112B13006F1562 /* HCNetDebugDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A4EE3C22112B13006F1562 /* HCNetDebugDemoUITests.m */; };
+		00A4EE4D22112DDE006F1562 /* HCNetDebugModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A4EE4C22112DDE006F1562 /* HCNetDebugModule.m */; };
+		00B46FCB22112FB200BED2F3 /* HCNetDebugMockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B46FC822112FA600BED2F3 /* HCNetDebugMockViewController.m */; };
+		00B46FCC22112FB500BED2F3 /* HCNetDebugMockRuleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B46FCA22112FA700BED2F3 /* HCNetDebugMockRuleViewController.m */; };
+		00B46FDA2211300000BED2F3 /* HCNetMockRuleSectionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B46FD22211300000BED2F3 /* HCNetMockRuleSectionModel.m */; };
+		00B46FDB2211300000BED2F3 /* HCNetMockRuleInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B46FD62211300000BED2F3 /* HCNetMockRuleInfoModel.m */; };
+		00B46FDC2211300000BED2F3 /* HCNetMockIntroViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B46FD82211300000BED2F3 /* HCNetMockIntroViewModel.m */; };
+		00B46FDD2211300000BED2F3 /* HCNetMockRuleItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B46FD92211300000BED2F3 /* HCNetMockRuleItemModel.m */; };
+		00B46FE22211301200BED2F3 /* HCNetMockManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B46FE12211301200BED2F3 /* HCNetMockManager.m */; };
+		00B46FE52211302400BED2F3 /* HCNetMockintroCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B46FE42211301800BED2F3 /* HCNetMockintroCell.m */; };
+		00B46FE62211303600BED2F3 /* mockList.json in Resources */ = {isa = PBXBuildFile; fileRef = 00B46FDE2211300B00BED2F3 /* mockList.json */; };
+		00B46FE72211303600BED2F3 /* mockRule.json in Resources */ = {isa = PBXBuildFile; fileRef = 00B46FDF2211300B00BED2F3 /* mockRule.json */; };
 		ABD47EE392AE9A3593795923 /* libPods-HCNetDebugDemoUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4295DBA56CB50519BFEF73E4 /* libPods-HCNetDebugDemoUITests.a */; };
 		D6AECB8FEEBEDEB794100D37 /* libPods-HCNetDebugDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 90638957F8E82AB7142EB04C /* libPods-HCNetDebugDemo.a */; };
 		E2B80111BAC8712B6BA67071 /* libPods-HCNetDebugDemoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EDB0B4461A89F2697210827 /* libPods-HCNetDebugDemoTests.a */; };
@@ -54,6 +65,26 @@
 		00A4EE3822112B13006F1562 /* HCNetDebugDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HCNetDebugDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00A4EE3C22112B13006F1562 /* HCNetDebugDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HCNetDebugDemoUITests.m; sourceTree = "<group>"; };
 		00A4EE3E22112B13006F1562 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		00A4EE4B22112DDE006F1562 /* HCNetDebugModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HCNetDebugModule.h; sourceTree = "<group>"; };
+		00A4EE4C22112DDE006F1562 /* HCNetDebugModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HCNetDebugModule.m; sourceTree = "<group>"; };
+		00B46FC722112FA600BED2F3 /* HCNetDebugMockViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HCNetDebugMockViewController.h; sourceTree = "<group>"; };
+		00B46FC822112FA600BED2F3 /* HCNetDebugMockViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HCNetDebugMockViewController.m; sourceTree = "<group>"; };
+		00B46FC922112FA600BED2F3 /* HCNetDebugMockRuleViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HCNetDebugMockRuleViewController.h; sourceTree = "<group>"; };
+		00B46FCA22112FA700BED2F3 /* HCNetDebugMockRuleViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HCNetDebugMockRuleViewController.m; sourceTree = "<group>"; };
+		00B46FD22211300000BED2F3 /* HCNetMockRuleSectionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCNetMockRuleSectionModel.m; sourceTree = "<group>"; };
+		00B46FD32211300000BED2F3 /* HCNetMockIntroViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCNetMockIntroViewModel.h; sourceTree = "<group>"; };
+		00B46FD42211300000BED2F3 /* HCNetMockRuleInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCNetMockRuleInfoModel.h; sourceTree = "<group>"; };
+		00B46FD52211300000BED2F3 /* HCNetMockRuleSectionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCNetMockRuleSectionModel.h; sourceTree = "<group>"; };
+		00B46FD62211300000BED2F3 /* HCNetMockRuleInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCNetMockRuleInfoModel.m; sourceTree = "<group>"; };
+		00B46FD72211300000BED2F3 /* HCNetMockRuleItemModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCNetMockRuleItemModel.h; sourceTree = "<group>"; };
+		00B46FD82211300000BED2F3 /* HCNetMockIntroViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCNetMockIntroViewModel.m; sourceTree = "<group>"; };
+		00B46FD92211300000BED2F3 /* HCNetMockRuleItemModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCNetMockRuleItemModel.m; sourceTree = "<group>"; };
+		00B46FDE2211300B00BED2F3 /* mockList.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = mockList.json; sourceTree = "<group>"; };
+		00B46FDF2211300B00BED2F3 /* mockRule.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = mockRule.json; sourceTree = "<group>"; };
+		00B46FE02211301200BED2F3 /* HCNetMockManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCNetMockManager.h; sourceTree = "<group>"; };
+		00B46FE12211301200BED2F3 /* HCNetMockManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCNetMockManager.m; sourceTree = "<group>"; };
+		00B46FE32211301800BED2F3 /* HCNetMockintroCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HCNetMockintroCell.h; sourceTree = "<group>"; };
+		00B46FE42211301800BED2F3 /* HCNetMockintroCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HCNetMockintroCell.m; sourceTree = "<group>"; };
 		4295DBA56CB50519BFEF73E4 /* libPods-HCNetDebugDemoUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HCNetDebugDemoUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D586E9B40F5EAF1371F3905 /* Pods-HCNetDebugDemoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HCNetDebugDemoUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HCNetDebugDemoUITests/Pods-HCNetDebugDemoUITests.release.xcconfig"; sourceTree = "<group>"; };
 		6EDB0B4461A89F2697210827 /* libPods-HCNetDebugDemoTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HCNetDebugDemoTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -122,6 +153,7 @@
 				00A4EE1922112B12006F1562 /* AppDelegate.m */,
 				00A4EE1B22112B12006F1562 /* ViewController.h */,
 				00A4EE1C22112B12006F1562 /* ViewController.m */,
+				00A4EE4E22112F0E006F1562 /* Mock */,
 				00A4EE4A22112D39006F1562 /* NetDebugModule */,
 				00A4EE1E22112B12006F1562 /* Main.storyboard */,
 				00A4EE2122112B13006F1562 /* Assets.xcassets */,
@@ -153,8 +185,75 @@
 		00A4EE4A22112D39006F1562 /* NetDebugModule */ = {
 			isa = PBXGroup;
 			children = (
+				00A4EE4B22112DDE006F1562 /* HCNetDebugModule.h */,
+				00A4EE4C22112DDE006F1562 /* HCNetDebugModule.m */,
 			);
 			path = NetDebugModule;
+			sourceTree = "<group>";
+		};
+		00A4EE4E22112F0E006F1562 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				00B46FD122112FEF00BED2F3 /* View */,
+				00B46FD022112FE100BED2F3 /* Model */,
+				00B46FCF22112FDC00BED2F3 /* Data */,
+				00B46FCE22112FCC00BED2F3 /* ViewController */,
+				00B46FCD22112FBE00BED2F3 /* Manager */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
+		00B46FCD22112FBE00BED2F3 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				00B46FE02211301200BED2F3 /* HCNetMockManager.h */,
+				00B46FE12211301200BED2F3 /* HCNetMockManager.m */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		00B46FCE22112FCC00BED2F3 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				00B46FC922112FA600BED2F3 /* HCNetDebugMockRuleViewController.h */,
+				00B46FCA22112FA700BED2F3 /* HCNetDebugMockRuleViewController.m */,
+				00B46FC722112FA600BED2F3 /* HCNetDebugMockViewController.h */,
+				00B46FC822112FA600BED2F3 /* HCNetDebugMockViewController.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		00B46FCF22112FDC00BED2F3 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				00B46FDE2211300B00BED2F3 /* mockList.json */,
+				00B46FDF2211300B00BED2F3 /* mockRule.json */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		00B46FD022112FE100BED2F3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				00B46FD32211300000BED2F3 /* HCNetMockIntroViewModel.h */,
+				00B46FD82211300000BED2F3 /* HCNetMockIntroViewModel.m */,
+				00B46FD42211300000BED2F3 /* HCNetMockRuleInfoModel.h */,
+				00B46FD62211300000BED2F3 /* HCNetMockRuleInfoModel.m */,
+				00B46FD52211300000BED2F3 /* HCNetMockRuleSectionModel.h */,
+				00B46FD22211300000BED2F3 /* HCNetMockRuleSectionModel.m */,
+				00B46FD72211300000BED2F3 /* HCNetMockRuleItemModel.h */,
+				00B46FD92211300000BED2F3 /* HCNetMockRuleItemModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		00B46FD122112FEF00BED2F3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				00B46FE32211301800BED2F3 /* HCNetMockintroCell.h */,
+				00B46FE42211301800BED2F3 /* HCNetMockintroCell.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		85941FADA09606D9F7F60B2F /* Pods */ = {
@@ -289,6 +388,8 @@
 				00A4EE2522112B13006F1562 /* LaunchScreen.storyboard in Resources */,
 				00A4EE2222112B13006F1562 /* Assets.xcassets in Resources */,
 				00A4EE2022112B12006F1562 /* Main.storyboard in Resources */,
+				00B46FE62211303600BED2F3 /* mockList.json in Resources */,
+				00B46FE72211303600BED2F3 /* mockRule.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -382,9 +483,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00A4EE4D22112DDE006F1562 /* HCNetDebugModule.m in Sources */,
 				00A4EE1D22112B12006F1562 /* ViewController.m in Sources */,
+				00B46FCB22112FB200BED2F3 /* HCNetDebugMockViewController.m in Sources */,
+				00B46FDA2211300000BED2F3 /* HCNetMockRuleSectionModel.m in Sources */,
+				00B46FDB2211300000BED2F3 /* HCNetMockRuleInfoModel.m in Sources */,
+				00B46FDC2211300000BED2F3 /* HCNetMockIntroViewModel.m in Sources */,
+				00B46FE22211301200BED2F3 /* HCNetMockManager.m in Sources */,
+				00B46FE52211302400BED2F3 /* HCNetMockintroCell.m in Sources */,
 				00A4EE2822112B13006F1562 /* main.m in Sources */,
+				00B46FDD2211300000BED2F3 /* HCNetMockRuleItemModel.m in Sources */,
 				00A4EE1A22112B12006F1562 /* AppDelegate.m in Sources */,
+				00B46FCC22112FB500BED2F3 /* HCNetDebugMockRuleViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

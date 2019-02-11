@@ -16,7 +16,18 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    CGFloat width = CGRectGetWidth(self.view.bounds);
+    CGFloat height = CGRectGetHeight(self.view.bounds);
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake((width - 120) * 0.5,
+                                                               (height - 120) * 0.5,
+                                                               120, 120)];
+    label.text = @"点击电池三下\n查看网络调试模块";
+    label.numberOfLines = 2;
+    label.font = [UIFont systemFontOfSize:14];
+    label.textColor = [UIColor blackColor];
+    label.textAlignment = NSTextAlignmentCenter;
+    [self.view addSubview:label];
 }
 
 

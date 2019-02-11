@@ -8,6 +8,7 @@ target 'HCNetDebugDemo' do
   # Pods for HCNetDebugDemo
   pod 'HCDebugTool'
   pod 'GYHttpMock'
+  pod 'FLEX'
 
   target 'HCNetDebugDemoTests' do
     inherit! :search_paths
