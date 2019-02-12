@@ -15,7 +15,6 @@ UITableViewDataSource>
 
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSString *ruleIdentity;
-@property (nonatomic, strong) HCNetMockManager *manager;
 @property (nonatomic, strong) HCNetMockRuleInfoModel *ruleInfo;
 @property (nonatomic, strong) NSArray <HCNetMockRuleSectionModel *>*sectionModels;
 @property (nonatomic, strong) NSIndexPath *selectedIndexPath;
@@ -53,7 +52,7 @@ UITableViewDataSource>
 }
 
 - (void)loadData {
-    self.sectionModels = [self.manager sectionModelWithMockIdentity:self.ruleIdentity];
+    self.sectionModels = [[HCNetMockManager sharedManager] sectionModelWithMockIdentity:self.ruleIdentity];
 }
 
 #pragma mark - UITableViewDataSource & UITableViewDelegate
@@ -116,7 +115,7 @@ UITableViewDataSource>
     
     HCNetMockRuleInfoModel *ruleInfo = [[HCNetMockRuleInfoModel alloc] init];
     ruleInfo.rule = item;
-    [self.manager saveRule:ruleInfo withMockIdentity:self.ruleIdentity];
+    [[HCNetMockManager sharedManager] saveRule:ruleInfo withMockIdentity:self.ruleIdentity];
         
     if (item.enable && ![self.selectedIndexPath isEqual:indexPath]) {
         cell = [tableView cellForRowAtIndexPath:self.selectedIndexPath];
@@ -153,13 +152,6 @@ UITableViewDataSource>
         _tableView.backgroundColor = [UIColor whiteColor];
     }
     return _tableView;
-}
-
-- (HCNetMockManager *)manager {
-    if (!_manager) {
-        _manager = [[HCNetMockManager alloc] init];
-    }
-    return _manager;
 }
 
 @end

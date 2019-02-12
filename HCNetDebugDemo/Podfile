@@ -7,7 +7,7 @@ target 'HCNetDebugDemo' do
 
   # Pods for HCNetDebugDemo
   pod 'HCDebugTool'
-  pod 'GYHttpMock'
+  pod 'GYHttpMock_HC'
   pod 'FLEX'
 
   target 'HCNetDebugDemoTests' do

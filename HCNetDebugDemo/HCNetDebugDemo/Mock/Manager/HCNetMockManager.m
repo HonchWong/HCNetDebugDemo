@@ -7,6 +7,7 @@
 //
 
 #import "HCNetMockManager.h"
+#import "GYHttpMock.h"
 
 @interface HCNetMockManager ()
 
@@ -18,6 +19,15 @@
 @end
 
 @implementation HCNetMockManager
+
++ (instancetype)sharedManager {
+    static dispatch_once_t onceToken;
+    static HCNetMockManager *manager = nil;
+    dispatch_once(&onceToken, ^{
+        manager = [[HCNetMockManager alloc] init];
+    });
+    return manager;
+}
 
 - (void)requestIntroViewModelWithCompletionHandler:(HCNetMockIntroHandler)handler {
     NSMutableArray <HCNetMockIntroViewModel *>*temp = [NSMutableArray array];
@@ -35,7 +45,27 @@
 }
 
 - (void)startMockWithIdentity:(NSString *)identity {
+    HCNetMockRuleInfoModel *ruleInfo = [self.ruleInfoDict objectForKey:identity];
+    if (!ruleInfo) { return; }
     
+    NSString *requestType = ruleInfo.requestType == HCNetMockRequestType_Get ? @"GET" : @"POST";
+    switch (ruleInfo.rule.ruleType) {
+        case HCNetMockRuleType_Empty:
+            mockRequest(requestType, ruleInfo.urlDetail);
+            break;
+        case HCNetMockRuleType_Error:
+            
+            break;
+        case HCNetMockRuleType_ModifyField:
+            
+            break;
+        case HCNetMockRuleType_ModifyNativeJson:
+            
+            break;
+        case HCNetMockRuleType_ModifyNetJson:
+            
+            break;
+    }
 }
 
 - (void)stopMockWithIdentity:(NSString *)identity {
@@ -54,6 +84,7 @@
     withMockIdentity:(NSString *)identity {
     NSDictionary *dict = [self.mockRuleIdentityDict objectForKey:identity];
     ruleInfo.requestType = [[dict objectForKey:@"requestType"] integerValue];
+    ruleInfo.urlDetail = [[dict objectForKey:@"urlDetail"] string];
     [self.ruleInfoDict setObject:ruleInfo forKey:identity];
 }
 

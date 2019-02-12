@@ -17,6 +17,8 @@ typedef HCNetMockManagerDataCompletionHandler HCNetMockIntroHandler;
 
 @interface HCNetMockManager : NSObject
 
++ (instancetype)sharedManager;
+
 - (void)requestIntroViewModelWithCompletionHandler:(HCNetMockIntroHandler)handler;
 
 

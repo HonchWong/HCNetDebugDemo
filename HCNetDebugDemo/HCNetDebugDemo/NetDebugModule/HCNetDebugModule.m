@@ -14,6 +14,7 @@
 typedef NS_OPTIONS(NSInteger, HCNetDebugOptionViewTag) {
     HCNetDebugOptionViewTag_Mock = 1,
     HCNetDebugOptionViewTag_PacketCapture,
+    HCNetDebugOptionViewTag_TestBookList,
 };
 
 @implementation HCNetDebugModule
@@ -22,6 +23,24 @@ typedef NS_OPTIONS(NSInteger, HCNetDebugOptionViewTag) {
 
 + (void)load {
     [[HCDebugToolManager sharedManager] registerModule:[[self alloc] init]];
+}
+
+- (void)testBookList {
+    NSURL *url = [NSURL URLWithString:@"https://www.easy-mock.com/mock/5b877ba37eb5e51ccf7d4db1/example/testBookList"];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    NSURLSession *session = [NSURLSession sharedSession];
+    NSURLSessionDataTask *dataTask =
+    [session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
+        if (dict) {
+            NSData *dictData = [NSJSONSerialization dataWithJSONObject:dict options:NSJSONWritingPrettyPrinted error:nil];
+            NSString *jsonString = [[NSString alloc] initWithData:dictData encoding:NSUTF8StringEncoding];
+            NSLog(@"%@", jsonString);
+        } else {
+            NSLog(@"data null");
+        }
+    }];
+    [dataTask resume];
 }
 
 #pragma mark - HCDebugToolCommonOptionViewDelegate
@@ -33,16 +52,21 @@ typedef NS_OPTIONS(NSInteger, HCNetDebugOptionViewTag) {
         {
             HCNetDebugMockViewController *vc =
             [[HCNetDebugMockViewController alloc] init];
-            UINavigationController *naviVC = [[UINavigationController alloc] initWithRootViewController:vc];
-            [self hideMenuView:^{
-                [self presentViewController:naviVC];
-            }];
-            mockRequest(@"GET", @"https://www.easy-mock.com/mock/5b877ba37eb5e51ccf7d4db1/example/testBookList");
+            [self pushViewController:vc];
+            NSString *bodyJsonStr =
+            [NSString stringWithFormat:@"{\"replaceURL\":\"%@\"}", @"https://www.easy-mock.com/mock/5b877ba37eb5e51ccf7d4db1/example/testBookList_mock"];
+            mockRequest(@"GET", @"https://www.easy-mock.com/mock/5b877ba37eb5e51ccf7d4db1/example/testBookList").isUseNetJsonResponse(YES).andReturn(200).
+            withBody(bodyJsonStr);
         }
             break;
         case HCNetDebugOptionViewTag_PacketCapture:
         {
             [[FLEXManager sharedManager] showExplorer];
+        }
+            break;
+        case HCNetDebugOptionViewTag_TestBookList:
+        {
+            [self testBookList];
         }
             break;
         default:
@@ -64,6 +88,9 @@ typedef NS_OPTIONS(NSInteger, HCNetDebugOptionViewTag) {
                },
              @{HCDebugCommonModuleOptionKeys.title: @"FLEX",
                HCDebugCommonModuleOptionKeys.viewTag: @(HCNetDebugOptionViewTag_PacketCapture),
+               },
+             @{HCDebugCommonModuleOptionKeys.title: @"TestBookList",
+               HCDebugCommonModuleOptionKeys.viewTag: @(HCNetDebugOptionViewTag_TestBookList),
                }];
 }
 

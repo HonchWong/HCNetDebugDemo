@@ -17,6 +17,7 @@ typedef NS_OPTIONS(NSInteger, HCNetMockRequestType) {
 @interface HCNetMockRuleInfoModel : NSObject
 
 @property (nonatomic, assign) HCNetMockRequestType requestType;
+@property (nonatomic, strong) NSString *urlDetail;
 @property (nonatomic, strong) HCNetMockRuleItemModel *rule;
 
 @end

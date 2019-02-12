@@ -18,7 +18,6 @@ HCNetMockintroCellActionDelegate>
 
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSMutableArray <HCNetMockIntroViewModel *>*viewModels;
-@property (nonatomic, strong) HCNetMockManager *manager;
 
 @end
 
@@ -63,7 +62,7 @@ HCNetMockintroCellActionDelegate>
 #pragma mark - Data
 
 - (void)loadData {
-    [self.manager requestIntroViewModelWithCompletionHandler:^(BOOL success, NSArray<HCNetMockIntroViewModel *> *viewModels) {
+    [[HCNetMockManager sharedManager] requestIntroViewModelWithCompletionHandler:^(BOOL success, NSArray<HCNetMockIntroViewModel *> *viewModels) {
         [self.viewModels addObjectsFromArray:viewModels];
         [self.tableView reloadData];
     }];
@@ -94,7 +93,14 @@ HCNetMockintroCellActionDelegate>
 #pragma mark - HCNetMockintroCellActionDelegate
 
 - (void)cell:(HCNetMockintroCell *)cell switchViewDidTap:(BOOL)isOn {
+    NSInteger index = [self.tableView indexPathForCell:cell].row;
+    HCNetMockIntroViewModel *viewModel = [self.viewModels objectAtIndex:index];
     
+    if (isOn) {
+        [[HCNetMockManager sharedManager] startMockWithIdentity:viewModel.identity];
+    } else {
+        [[HCNetMockManager sharedManager] stopMockWithIdentity:viewModel.identity];
+    }
 }
 
 - (void)cellEditRuleBtnDidClick:(HCNetMockintroCell *)cell {
@@ -127,13 +133,6 @@ HCNetMockintroCellActionDelegate>
         _viewModels = @[].mutableCopy;
     }
     return _viewModels;
-}
-
-- (HCNetMockManager *)manager {
-    if (!_manager) {
-        _manager = [[HCNetMockManager alloc] init];
-    }
-    return _manager;
 }
 
 @end
