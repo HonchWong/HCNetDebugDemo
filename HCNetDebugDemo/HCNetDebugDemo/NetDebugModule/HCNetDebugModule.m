@@ -53,10 +53,6 @@ typedef NS_OPTIONS(NSInteger, HCNetDebugOptionViewTag) {
             HCNetDebugMockViewController *vc =
             [[HCNetDebugMockViewController alloc] init];
             [self pushViewController:vc];
-            NSString *bodyJsonStr =
-            [NSString stringWithFormat:@"{\"replaceURL\":\"%@\"}", @"https://www.easy-mock.com/mock/5b877ba37eb5e51ccf7d4db1/example/testBookList_mock"];
-            mockRequest(@"GET", @"https://www.easy-mock.com/mock/5b877ba37eb5e51ccf7d4db1/example/testBookList").isUseNetJsonResponse(YES).andReturn(200).
-            withBody(bodyJsonStr);
         }
             break;
         case HCNetDebugOptionViewTag_PacketCapture:

@@ -63,7 +63,13 @@
             
             break;
         case HCNetMockRuleType_ModifyNetJson:
-            
+        {
+            if (ruleInfo.rule.jsonPath.length) {
+                NSString *bodyJsonStr =
+                [NSString stringWithFormat:@"{\"replaceURL\":\"%@\"}", ruleInfo.rule.jsonPath];
+                mockRequest(requestType, ruleInfo.urlDetail).isUseNetJsonResponse(YES).andReturn(200).withBody(bodyJsonStr);
+            }
+        }
             break;
     }
 }
@@ -84,7 +90,7 @@
     withMockIdentity:(NSString *)identity {
     NSDictionary *dict = [self.mockRuleIdentityDict objectForKey:identity];
     ruleInfo.requestType = [[dict objectForKey:@"requestType"] integerValue];
-    ruleInfo.urlDetail = [[dict objectForKey:@"urlDetail"] string];
+    ruleInfo.urlDetail = [dict objectForKey:@"urlDetail"];
     [self.ruleInfoDict setObject:ruleInfo forKey:identity];
 }
 

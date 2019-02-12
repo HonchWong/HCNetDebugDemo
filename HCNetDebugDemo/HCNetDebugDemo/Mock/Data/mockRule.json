@@ -2,7 +2,7 @@
     "mockRule" : {
         "1" : {
             "requestType": 1,
-            "urlDetail": "https://www.easy-mock.commock/5b877ba37eb5e51ccf7d4db1/example/testBookList",
+            "urlDetail": "https://www.easy-mock.com/mock/5b877ba37eb5e51ccf7d4db1/example/testBookList",
             "rules": [
                 {
                     "type": 1,
@@ -78,13 +78,13 @@
                     "data": [
                         {
                             "enable": 1,
-                            "ruleName": "模拟包月信息",
-                            "path": "",
+                            "ruleName": "testBookList_mock_2",
+                            "path": "https://www.easy-mock.com/mock/5b877ba37eb5e51ccf7d4db1/example/testBookList_mock_2",
                         },
                         {
                             "enable": 1,
-                            "ruleName": "模拟包月信息",
-                            "path": "",
+                            "ruleName": "testBookList_mock_1",
+                            "path": "https://www.easy-mock.com/mock/5b877ba37eb5e51ccf7d4db1/example/testBookList_mock_1",
                         },
                     ]
                 },
