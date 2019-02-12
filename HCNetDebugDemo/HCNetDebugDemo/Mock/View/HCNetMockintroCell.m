@@ -8,12 +8,28 @@
 
 #import "HCNetMockintroCell.h"
 
+#define kUrlDescLabelTopMargin      12
+#define kUrlDescLabelLeftMargin     12
+#define kUrlDescLabelRightMargin    70
+
+#define kUrlDetailTextLeftMargin    12
+#define kUrlDetailTextTopMargin     6
+#define kUrlDetailTextRightMargin   70
+#define kUrlDetailTextHeight        40
+
+#define kRuleLabelTopMargin         6
+
+#define kLabelFontSize              14
+
+#define kEditBtnHeight              18
+
 @interface HCNetMockintroCell ()
 
 @property (nonatomic, strong) UILabel *urlDescLabel;
 @property (nonatomic, strong) UITextView *urlDetailTextView;
 @property (nonatomic, strong) UISwitch *switchView;
 @property (nonatomic, strong) UIButton *editButton;
+@property (nonatomic, strong) UILabel *ruleLabel;
 
 @end
 
@@ -35,29 +51,44 @@
 }
 
 - (void)setupUI {
-    self.urlDescLabel.frame = CGRectMake(12, 12, CGRectGetWidth([UIScreen mainScreen].bounds) - 12 - 70 - 12, self.urlDescLabel.font.pointSize);
+    self.urlDescLabel.frame = CGRectMake(kUrlDescLabelLeftMargin, kUrlDescLabelTopMargin,
+                                         CGRectGetWidth([UIScreen mainScreen].bounds) - kUrlDescLabelLeftMargin - kUrlDescLabelRightMargin,
+                                         self.urlDescLabel.font.pointSize);
     [self.contentView addSubview:self.urlDescLabel];
     
-    self.urlDetailTextView.frame = CGRectMake(12, CGRectGetMaxY(self.urlDescLabel.frame) + 6,
-                                            CGRectGetWidth(self.urlDescLabel.frame),
-                                            12 * 3);
+    self.urlDetailTextView.frame = CGRectMake(kUrlDetailTextLeftMargin,
+                                              CGRectGetMaxY(self.urlDescLabel.frame) + kUrlDetailTextTopMargin,
+                                              CGRectGetWidth(self.urlDescLabel.frame),
+                                              kUrlDetailTextHeight);
     [self.contentView addSubview:self.urlDetailTextView];
     
     self.switchView.frame = CGRectMake(CGRectGetMaxX(self.urlDetailTextView.frame) + 12,
-                                       12, 0, 0);
+                                       CGRectGetMinY(self.urlDetailTextView.frame), 0, 0);
     [self.contentView addSubview:self.switchView];
     
+    self.ruleLabel.frame = CGRectMake(CGRectGetMinX(self.urlDetailTextView.frame),
+                                      CGRectGetMaxY(self.urlDetailTextView.frame) + kRuleLabelTopMargin,
+                                      CGRectGetWidth(self.urlDetailTextView.frame),
+                                      self.ruleLabel.font.pointSize);
+    [self.contentView addSubview:self.ruleLabel];
+    
     self.editButton.frame = CGRectMake(CGRectGetMinX(self.switchView.frame),
-                                       CGRectGetMaxY(self.switchView.frame) + 8,
+                                       CGRectGetMinY(self.ruleLabel.frame),
                                        CGRectGetWidth(self.switchView.frame),
-                                       18);
+                                       kEditBtnHeight);
     self.editButton.layer.cornerRadius = 3;
     
     [self.contentView addSubview:self.editButton];
 }
 
 + (CGFloat)cellHeight {
-    return 12 * 3 + 6 + 12 * 2 + 14;
+    return kUrlDescLabelTopMargin +
+    kLabelFontSize +
+    kUrlDetailTextTopMargin +
+    kUrlDetailTextHeight +
+    kRuleLabelTopMargin +
+    kEditBtnHeight +
+    kUrlDescLabelTopMargin;
 }
 
 #pragma mark - action
@@ -80,11 +111,23 @@
     if (!_urlDescLabel) {
         UILabel *label = [[UILabel alloc] init];
         label.textColor = [UIColor blackColor];
-        label.font = [UIFont systemFontOfSize:14];
+        label.font = [UIFont systemFontOfSize:kLabelFontSize];
         label.numberOfLines = 1;
         _urlDescLabel = label;
     }
     return _urlDescLabel;
+}
+
+- (UILabel *)ruleLabel {
+    if (!_ruleLabel) {
+        UILabel *label = [[UILabel alloc] init];
+        label.textColor = [UIColor blackColor];
+        label.font = [UIFont systemFontOfSize:kLabelFontSize];
+        label.numberOfLines = 1;
+        label.text = @"当前规则：";
+        _ruleLabel = label;
+    }
+    return _ruleLabel;
 }
 
 - (UITextView *)urlDetailTextView {
