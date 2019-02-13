@@ -39,9 +39,24 @@ withBody(@"{\"replaceURL\":\ohterurl\"}");
 
 
 
-## 可视化设置Mock的功能规划
+## 可视化设置Mock规则
 
+##### 每一个URL都可以设置哪些Mock规则
 一个URL 都对应五种Mock类型，每种Mock类型可以有多个Mock规则。一个URL和一个Mock规则一一对应。
 
-五种Mock类型按照返回数据的类型进行区分，分别是 错误返回、空返回、增加response中的字段
+五种Mock类型按照返回数据的类型进行区分，分别是 
+- 错误返回
+- 空返回
+- 增加response中的字段
+- 使用本地json作为response返回
+- 使用另一个请求的response返回数据
 
+用图表示就是：
+
+![mock策略](http://m.qpic.cn/psb?/V10JaO4w40EHz4/*TuvFOzK5zB1rHAa4EdQHem55cT2cnbvs0EkPlSg398!/b/dLYAAAAAAAAA&bo=wQMeAwAAAAADB*0!&rf=viewer_4)
+
+错误返回、空返回、使用另一个请求的response返回数据 这三种Mock类型应该是比较常用的。其中错误返回和空返回可以用来调试业务的容错场景，使用最高频的应该是“使用另一个请求的response返回数据”，比如，某个页面有这样的需求，该页面针对不同的用户身份有不同的展示规则，每周日晚八点还固定会展示某个活动按钮，一共有七八种样式，都是依赖网络数据进行展示的，在开发的时候和服务端约定好了协议。
+
+##### 有哪些UI 可以进行Mock设置
+
+##### 完成进度
