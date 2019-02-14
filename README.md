@@ -37,10 +37,6 @@ withBody(@"{\"replaceURL\":\ohterurl\"}");
 ![时序图](http://m.qpic.cn/psb?/V10JaO4w40EHz4/Rr2Xq1p5g3ZN82Bh*0sezyTSpNQpSFjI6CJLhq5cCBw!/b/dC4BAAAAAAAA&bo=YAIeAwAAAAADB10!&rf=viewer_4)
 
 
-## 的功能展示
-
-
-
 ## 可视化设置Mock规则
 
 ##### Mock规则
@@ -73,6 +69,21 @@ withBody(@"{\"replaceURL\":\ohterurl\"}");
 
 ##### UI 展示
 
+gift图中，调试页面有三个按钮“TestBookList”、“Mock网络数据”、“FLEX”
+
+- “TestBookList”：点击按钮发起网络请求，URL是：https://www.easy-mock.com/mock/5b877ba37eb5e51ccf7d4db1/example/testBookList
+- “FLEX”： 点击按钮展示用来抓包的工具
+- “Mock网络数据”： 点击按钮展示Mock设置的界面
+
+gift图的操作展示了，点击“Mock网络数据” 设置 【 https://www.easy-mock.com/mock/5b877ba37eb5e51ccf7d4db1/example/testBookList 】的Mock规则，规则是使用另一个请求的response返回数据，通过FLEX抓包查看，Mock成功
+
 ![gift图](https://github.com/HonchWong/imageSrc/blob/master/gif/teseNetMock.gif?raw=true)
 
 ##### 完成进度
+
+这个Demo的功能，分别是Mock能力和可视化设置。Mock能力已经完成了。可视化设置只完成了，设置针对URL指定Mock规则“使用另一个请求的response返回数据”。
+
+待完成的点有：
+- 可视化设置所有的Mock规则
+- Mock规则存储到服务器上，服务器提供获取、修改Mock规则的API
+
