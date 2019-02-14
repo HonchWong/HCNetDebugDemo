@@ -61,12 +61,18 @@ withBody(@"{\"replaceURL\":\ohterurl\"}");
 错误返回、空返回、使用另一个请求的response返回数据 这三种Mock类型应该是比较常用的。
 
 - 其中错误返回和空返回可以用来调试业务的容错场景
-- 使用最高频的应该是“使用另一个请求的response返回数据”，比如，某个页面有这样的需求，该页面针对不同的用户身份有不同的展示规则，每周日晚八点还固定会展示某个活动按钮，一共有七八种样式，都是依赖网络数据进行展示的，在开发的时候和服务端约定好了协议，可以在公司的协议管理平台列举好一个协议都有多少种返回，如果公司没协议管理平台，我推荐这个开源的协议管理平台 [https://www.easy-mock.com/](https://www.easy-mock.com/)
+- 使用最高频的应该是“使用另一个请求的response返回数据”，比如，某个页面有这样的需求，该页面针对不同的用户身份有不同的展示规则，每周日晚八点还固定会展示某个活动按钮，一共有七八种样式，都是依赖网络数据进行展示的，如果有个按钮去选择返回场景A的数据或场景B的数据，而不用在代码里修改再编译或使用代理软件，岂不是很方便？“使用另一个请求的response返回数据”这个Mock类型正好解决这个问题。
+
+在开发的时候和服务端约定好了协议，可以在公司的协议管理平台列举好一个协议都有多少种返回，如果公司没协议管理平台，我推荐这个开源的协议管理平台 [https://www.easy-mock.com/](https://www.easy-mock.com/)
 
 ![http://m.qpic.cn/psb?/V10JaO4w40EHz4/aLPsXo9Kq.f*FdXUiWBUaIDNeYk74tuVOACz1XCwMIE!/b/dL8AAAAAAAAA&bo=JQSbAgAAAAADB5o!&rf=viewer_4](http://m.qpic.cn/psb?/V10JaO4w40EHz4/aLPsXo9Kq.f*FdXUiWBUaIDNeYk74tuVOACz1XCwMIE!/b/dL8AAAAAAAAA&bo=JQSbAgAAAAADB5o!&rf=viewer_4)
 
+同一个协议不同的场景数据，用平台管理还有另一个优点就是方便多人协作，而不是放在App端内作为本地数据，只能自己用。
 
+数据源有了，再看一下切换数据的“按钮”
 
 ##### UI 展示
+
+![gift图](https://github.com/HonchWong/imageSrc/blob/master/gif/teseNetMock.gif?raw=true)
 
 ##### 完成进度
