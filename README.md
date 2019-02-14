@@ -39,7 +39,7 @@ withBody(@"{\"replaceURL\":\ohterurl\"}");
 
 ## 可视化设置Mock规则
 
-##### Mock规则
+### Mock规则
 一个URL 都对应五种Mock类型，每种Mock类型可以有多个Mock规则。一个URL和一个Mock规则一一对应。
 
 五种Mock类型按照返回数据的类型进行区分，分别是 
@@ -53,7 +53,7 @@ withBody(@"{\"replaceURL\":\ohterurl\"}");
 
 ![mock策略](http://m.qpic.cn/psb?/V10JaO4w40EHz4/*TuvFOzK5zB1rHAa4EdQHem55cT2cnbvs0EkPlSg398!/b/dLYAAAAAAAAA&bo=wQMeAwAAAAADB*0!&rf=viewer_4)
 
-##### 应用场景
+### 应用场景
 错误返回、空返回、使用另一个请求的response返回数据 这三种Mock类型应该是比较常用的。
 
 - 其中错误返回和空返回可以用来调试业务的容错场景
@@ -67,7 +67,7 @@ withBody(@"{\"replaceURL\":\ohterurl\"}");
 
 数据源有了，再看一下切换数据的“按钮”
 
-##### UI 展示
+## UI 展示
 
 gift图中，调试页面有三个按钮“TestBookList”、“Mock网络数据”、“FLEX”
 
@@ -79,7 +79,7 @@ gift图的操作展示了，点击“Mock网络数据” 设置 【 https://www.
 
 ![gift图](https://github.com/HonchWong/imageSrc/blob/master/gif/teseNetMock.gif?raw=true)
 
-##### 完成进度
+## 完成进度
 
 这个Demo的功能，分别是Mock能力和可视化设置。Mock能力已经完成了。可视化设置只完成了，设置针对URL指定Mock规则“使用另一个请求的response返回数据”。
 
